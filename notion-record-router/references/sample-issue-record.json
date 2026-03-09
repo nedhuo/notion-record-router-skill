@@ -1,0 +1,19 @@
+{
+  "type": "issue",
+  "title": "Fragment 返回后空指针崩溃",
+  "date": "2026-03-09",
+  "tags": ["android", "fragment", "crash"],
+  "source_url": "https://example.com/issues/fragment-binding",
+  "symptom": "返回页面时偶现崩溃，堆栈指向 binding 调用。",
+  "root_cause": "onDestroyView 后仍有异步回调访问旧的 ViewBinding。",
+  "fix": "在回调前检查 viewLifecycleOwner 生命周期，并清理旧引用。",
+  "regression_checks": [
+    "快速进入退出页面",
+    "网络慢时返回页面",
+    "横竖屏切换后重试"
+  ],
+  "modules": [
+    "feature-home",
+    "common-ui"
+  ]
+}

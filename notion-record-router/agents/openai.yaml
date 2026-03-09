@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notion Record Router"
+  short_description: "Route structured notes into the right Notion database."
+  default_prompt: "Classify the content, choose the matching template, and write the entry to the configured Notion database."

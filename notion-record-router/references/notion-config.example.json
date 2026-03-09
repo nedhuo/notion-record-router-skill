@@ -1,0 +1,50 @@
+{
+  "notion_version": "2025-09-03",
+  "routes": {
+    "issue": {
+      "data_source_id": "replace-with-issue-data-source-id",
+      "match": {
+        "any_of_fields": ["symptom", "root_cause", "fix"],
+        "any_of_keywords": ["bug", "crash", "anr", "exception"]
+      },
+      "properties": {
+        "Name": { "type": "title", "field": "title" },
+        "Tags": { "type": "multi_select", "field": "tags" },
+        "Date": { "type": "date", "field": "date" },
+        "Source URL": { "type": "url", "field": "source_url" },
+        "Type": { "type": "select", "template": "问题修复" }
+      },
+      "markdown_template": "# {{title}}\n\n## 现象\n{{symptom}}\n\n## 根因\n{{root_cause}}\n\n## 修复方案\n{{fix}}\n\n## 回归测试点\n{{regression_checks}}\n\n## 相关模块\n{{modules}}\n"
+    },
+    "article": {
+      "data_source_id": "replace-with-article-data-source-id",
+      "match": {
+        "any_of_fields": ["summary", "why_it_matters"],
+        "any_of_keywords": ["article", "news", "policy", "summary"]
+      },
+      "properties": {
+        "Name": { "type": "title", "field": "title" },
+        "Tags": { "type": "multi_select", "field": "tags" },
+        "Date": { "type": "date", "field": "date" },
+        "Source": { "type": "rich_text", "field": "source" },
+        "Source URL": { "type": "url", "field": "source_url" },
+        "Type": { "type": "select", "template": "文章摘要" }
+      },
+      "markdown_template": "# {{title}}\n\n## 来源\n{{source}}\n\n## 原文链接\n{{source_url}}\n\n## 核心结论\n{{summary}}\n\n## 对我的意义\n{{why_it_matters}}\n\n## 后续跟踪\n{{next_steps}}\n"
+    },
+    "idea": {
+      "data_source_id": "replace-with-idea-data-source-id",
+      "match": {
+        "any_of_fields": ["idea", "why_record"],
+        "any_of_keywords": ["idea", "thought", "灵感", "想法"]
+      },
+      "properties": {
+        "Name": { "type": "title", "field": "title" },
+        "Tags": { "type": "multi_select", "field": "tags" },
+        "Date": { "type": "date", "field": "date" },
+        "Type": { "type": "select", "template": "灵感卡片" }
+      },
+      "markdown_template": "# {{title}}\n\n## 想法内容\n{{idea}}\n\n## 为什么值得记录\n{{why_record}}\n\n## 可延伸方向\n{{next_steps}}\n"
+    }
+  }
+}
