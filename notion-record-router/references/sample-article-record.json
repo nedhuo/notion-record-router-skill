@@ -1,0 +1,15 @@
+{
+  "type": "article",
+  "title": "微信文章上传测试",
+  "source": "微信公众号",
+  "source_url": "https://mp.weixin.qq.com/s/Zz7lGunKVTRadwVBjXmBhA",
+  "date": "2026-03-09",
+  "tags": ["wechat", "article", "test"],
+  "summary": "使用微信公众号文章链接验证 notion-record-router 的 article 路由与 Notion 请求体生成是否正常。",
+  "why_it_matters": "用于测试文章类内容能否被正确整理并写入对应的 Notion 库。",
+  "next_steps": [
+    "补充真实 Notion data_source_id",
+    "设置 NOTION_API_KEY",
+    "执行真实上传"
+  ]
+}
